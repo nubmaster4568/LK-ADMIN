@@ -9,6 +9,7 @@ const bot = new TelegramBot(token, { polling: true });
 
 bot.onText(/\/start/, (msg) => {
     const chatId = msg.chat.id;
+    console.log(chatId)
     bot.sendMessage(chatId, 'SHOP', {
         reply_markup: {
             inline_keyboard: [
