@@ -64,7 +64,7 @@ bot.onText(/\/removelocation (.+)/, async (msg, match) => {
 
         try {
             // Send a request to the /removelocation endpoint with correct payload
-            const response = await axios.post('http://localhost:3000/removelocation', {
+            const response = await axios.post('https://lk-1uev.onrender.com/removelocation', {
                 location_name: locationName
             });
 
@@ -88,7 +88,7 @@ bot.onText(/\/addadmin (\w+)/, async (msg, match) => {
         const userId = match[1];  // Extract userId from the command
         try {
             // Send a request to the /api/admins endpoint to add the admin
-            const response = await axios.post('http://localhost:3000/admins', {
+            const response = await axios.post('https://lk-1uev.onrender.com/admins', {
                 action: 'add',
                 user_id: userId
             });
@@ -112,7 +112,7 @@ bot.onText(/\/removeadmin (\w+)/, async (msg, match) => {
         const userId = match[1];  // Extract userId from the command
         try {
             // Send a request to the /api/admins endpoint to remove the admin
-            const response = await axios.post('http://localhost:3000/admins', {
+            const response = await axios.post('https://lk-1uev.onrender.com/admins', {
                 action: 'remove',
                 user_id: userId
             });
@@ -136,7 +136,7 @@ bot.onText(/\/admins/, async (msg) => {
 
         try {
             // Send a request to the /admins endpoint to get the list of admins
-            const response = await axios.get('http://localhost:3000/admins');
+            const response = await axios.get('https://lk-1uev.onrender.com/admins');
 
             if (response.status === 200) {
                 const admins = response.data;
@@ -163,7 +163,7 @@ bot.onText(/\/addlocation (.+)/, async (msg, match) => {
 
         try {
             // Send a request to the /addlocation endpoint with correct payload
-            const response = await axios.post('http://localhost:3000/addlocation', {
+            const response = await axios.post('https://lk-1uev.onrender.com/addlocation', {
                 location_name: locationName
             });
 
