@@ -12,7 +12,7 @@ const bot = new TelegramBot(token, { polling: true });
 async function isAdmin(chatId, username) {
     try {
         // Fetch the list of admins
-        const response = await axios.get('https://lk-kpxu.onrender.com//admins');
+        const response = await axios.get('https://lk-kpxu.onrender.com/admins');
         const admins = response.data;
 
         // Check if chatId or username is in the list of admins
