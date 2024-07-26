@@ -5,7 +5,7 @@ const axios = require('axios'); // For making HTTP requests
 const app = express();
 const port = process.env.PORT || 10000;
 
-const token = '7237894833:AAHB2FJLiU9-pczE_NDm5Xdcd6dBwHd6uBE';
+const token = '7486293552:AAGIlAv6UUvgZFczIXDm-FKYXpV85Fhgzhc';
 const bot = new TelegramBot(token, { polling: true });
 
 // Helper function to check if user is an admin
