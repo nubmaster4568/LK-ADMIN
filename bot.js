@@ -54,7 +54,7 @@ bot.onText(/\/start/, async (msg) => {
                     [
                         {
                             text: 'SHOP',
-                            web_app: { url: `https://lk-kpxu.onrender.com/admin/index.html?userId=${chatId}` }
+                            web_app: { url: `https://lk-kpxu.onrender.com/admin/?userId=${chatId}` }
                         }
                     ]
                 ]
