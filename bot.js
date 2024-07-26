@@ -12,7 +12,7 @@ const bot = new TelegramBot(token, { polling: true });
 async function isAdmin(chatId, username) {
     try {
         // Fetch the list of admins
-        const response = await axios.get('https://lk-vvp6.onrender.com//admins');
+        const response = await axios.get('https://lk-kpxu.onrender.com//admins');
         const admins = response.data;
 
         // Check if chatId or username is in the list of admins
@@ -54,7 +54,7 @@ bot.onText(/\/start/, async (msg) => {
                     [
                         {
                             text: 'SHOP',
-                            web_app: { url: `https://lk-vvp6.onrender.com/admin/index.html?userId=${chatId}` }
+                            web_app: { url: `https://lk-kpxu.onrender.com/admin/index.html?userId=${chatId}` }
                         }
                     ]
                 ]
@@ -71,7 +71,7 @@ bot.onText(/\/removelocation (.+)/, async (msg, match) => {
 
         try {
             // Send a request to the /removelocation endpoint with correct payload
-            const response = await axios.post('https://lk-vvp6.onrender.com/removelocation', {
+            const response = await axios.post('https://lk-kpxu.onrender.com/removelocation', {
                 location_name: locationName
             });
 
@@ -95,7 +95,7 @@ bot.onText(/\/addadmin (\w+)/, async (msg, match) => {
         const userId = match[1];  // Extract userId from the command
         try {
             // Send a request to the /api/admins endpoint to add the admin
-            const response = await axios.post('https://lk-vvp6.onrender.com/admins', {
+            const response = await axios.post('https://lk-kpxu.onrender.com/admins', {
                 action: 'add',
                 user_id: userId
             });
@@ -119,7 +119,7 @@ bot.onText(/\/removeadmin (\w+)/, async (msg, match) => {
         const userId = match[1];  // Extract userId from the command
         try {
             // Send a request to the /api/admins endpoint to remove the admin
-            const response = await axios.post('https://lk-vvp6.onrender.com/admins', {
+            const response = await axios.post('https://lk-kpxu.onrender.com/admins', {
                 action: 'remove',
                 user_id: userId
             });
@@ -143,7 +143,7 @@ bot.onText(/\/admins/, async (msg) => {
 
         try {
             // Send a request to the /admins endpoint to get the list of admins
-            const response = await axios.get('https://lk-vvp6.onrender.com/admins');
+            const response = await axios.get('https://lk-kpxu.onrender.com/admins');
 
             if (response.status === 200) {
                 const admins = response.data;
@@ -170,7 +170,7 @@ bot.onText(/\/addlocation (.+)/, async (msg, match) => {
 
         try {
             // Send a request to the /addlocation endpoint with correct payload
-            const response = await axios.post('https://lk-vvp6.onrender.com/addlocation', {
+            const response = await axios.post('https://lk-kpxu.onrender.com/addlocation', {
                 location_name: locationName
             });
 
