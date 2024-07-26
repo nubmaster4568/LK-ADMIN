@@ -41,6 +41,7 @@ async function checkAdminAndExecute(ctx, callback) {
 bot.onText(/\/start/, async (msg) => {
     await checkAdminAndExecute(msg, async (ctx) => {
         const chatId = ctx.chat.id;
+
         bot.sendMessage(chatId, 'Welcome Admin! Here is the shop:', {
             reply_markup: {
                 inline_keyboard: [
